@@ -1,0 +1,38 @@
+.contentCard {
+  background-color: #0A3D62;
+  color: white !important;
+  display: flex;
+  height: 525px;
+  justify-content: space-between;
+  max-width: 400px;
+  overflow: hidden;
+
+  img {
+    max-height: 300px;
+    object-fit: contain;
+    object-fit: cover;
+    object-fit: fill;
+    object-fit: scale-down;
+    width: 100%;
+  }
+}
+
+mat-card-content {
+  margin-block: 10px;
+
+  p {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.5%;
+  gap: 1rem;
+}

@@ -1,0 +1,85 @@
+.bodyContent {
+  align-items: center;
+  background-color: #0A3D62;
+  display: flex;
+  justify-content: start;
+  width: 100dvw;
+  flex-direction: column;
+  padding: 0%;
+
+  @media (max-width: 819px) {
+    height: auto !important;
+    overflow-y: scroll;
+  }
+
+  @media (min-width: 820px) {
+    height: 100vh;
+  }
+}
+
+.buttonContent {
+  align-items: center;
+  display: flex;
+  padding-bottom: 1%;
+  padding-inline: 3%;
+  width: 100%;
+}
+
+.heroName {
+  color: white;
+  flex: 1;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  width: 100%;
+}
+
+.content {
+  background-color: olive;
+  border-radius: 10px;
+  min-height: 80%;
+  overflow: hidden;
+  width: 95%;
+}
+
+.imgContent {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30%;
+
+  @media (max-width: 819px) {
+    margin-bottom: 5%;
+  }
+}
+
+.custom-bullets {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  text-align: justify;
+  font-weight: 500;
+
+  span {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+
+  li {
+    padding-right: 10%;
+  }
+
+  i {
+    font-size: 2.5rem;
+  }
+}
+
+.infoContent {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

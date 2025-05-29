@@ -1,0 +1,38 @@
+<div class="content">
+
+  <div class="paginatorContent">
+    <ul>
+      @for (meal of heroesListComp() | paginate: paginationConfigComp(); track $index) {
+        <li></li>
+      }
+    </ul>
+    <div>
+      <pagination-controls (pageChange)="handlingHeroesRequest($event, itemsPerPageControl.value!)" [autoHide]="false" [directionLinks]="true"
+        [maxSize]="5">
+      </pagination-controls>
+    </div>
+
+    <mat-form-field class="compact-select ml-5" appearance="outline">
+      <mat-select [formControl]="itemsPerPageControl" (selectionChange)="handlingItemsPerPage($event)">
+        @for (itemsNumber of itemsPerPage; track itemsNumber) {
+          <mat-option [value]="itemsNumber">{{itemsNumber}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="
+    grid
+    sm:grid-cols-1
+    md:grid-cols-3
+    lg:grid-cols-4
+    xl:grid-cols-5
+    gap-2
+    p-5
+  ">
+    @for (item of heroesListComp(); track $index) {
+      <app-super-hero-card [hero]="item" />
+    }
+  </div>
+
+</div>

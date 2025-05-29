@@ -1,0 +1,59 @@
+<div class="fixed left-0 top-0 w-64 h-full bg-[#0A3D62] !text-white p-4 z-50 transition-transform duration-750" [ngClass]="{ '-translate-x-full': sidebarOverlay() }">
+  <a href="#" class="flex items-center pb-4 border-b border-b-gray-800">
+    <h2 class="font-bold text-2xl">Super <span class="bg-[#f84525] text-white px-2 rounded-md">Hero</span></h2>
+  </a>
+  <ul class="mt-4 !text-white">
+    <span class="!text-white font-bold">OPCIÓN 1</span>
+    <ul class="mb-1 group" *ngFor="let item of menuOptionOne">
+      <li class="mb-1 group">
+        <button
+          class="flex font-semibold items-center w-full py-2 px-4 !text-white hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle"
+        >
+          <i [class]="item.icon"></i>
+          <span class="text-sm ml-3">{{ item.title }}</span>
+        </button>
+      </li>
+    </ul>
+    <li class="mb-1 group">
+      <button
+        (click)="toggleUsersMenu()"
+        class="flex justify-between w-full font-semibold items-center py-2 px-4 !text-white hover:bg-gray-950 hover:text-gray-100 rounded-md"
+        [ngClass]="{ 'bg-gray-800 text-white': isUsersMenuOpen }"
+      >
+        <div>
+          <i class="fa-solid fa-sitemap"></i>
+          <span class="text-sm ml-3">Users</span>
+        </div>
+        <i class="fa-solid fa-caret-right" [ngClass]="{ 'arrowTransition': isUsersMenuOpen }"></i>
+      </button>
+      <ul
+        [ngClass]="{ 'block': isUsersMenuOpen, 'hidden': !isUsersMenuOpen }"
+        class="pl-7 mt-2 hidden group-[.selected]:block"
+        *ngFor="let item of dropdownList"
+      >
+        <li class="mb-1 group">
+          <button
+            class="flex font-semibold items-center w-full py-2 px-4 !text-white hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle"
+          >
+            <i [class]="item.icon"></i>
+            <span class="text-sm ml-3">{{ item.title }}</span>
+          </button>
+        </li>
+      </ul>
+    </li>
+    <span class="!text-white font-bold mb-1">OPCIÓN 2</span>
+
+    <ul class="mb-1 group" *ngFor="let item of menuOptionTwo">
+      <li class="mb-1 group">
+        <button
+          class="flex font-semibold items-center w-full py-2 px-4 !text-white hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle"
+        >
+          <i [class]="item.icon"></i>
+          <span class="text-sm ml-3">{{ item.title }}</span>
+        </button>
+      </li>
+    </ul>
+
+  </ul>
+</div>
+<div class="" *ngIf="sidebarOverlay"></div>
