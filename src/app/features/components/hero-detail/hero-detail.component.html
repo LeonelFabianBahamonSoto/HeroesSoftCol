@@ -1,0 +1,99 @@
+<div class="bodyContent">
+
+  <div class="buttonContent mt-5">
+    <div class="sm:w-[20%] w-[40%]">
+      <button class="secondaryButton w-[70%]" (click)="goBack()">
+        <i class="fa-solid fa-arrow-left"></i>
+        Volver
+      </button>
+    </div>
+
+    <div class="heroName">
+      <span>{{heroComp()?.name}}</span>
+    </div>
+
+    <div class="sm:w-[20%] w-[10%]"></div>
+  </div>
+
+  <div class="
+    grid
+    sm:grid-cols-1
+    md:grid-cols-2
+    lg:grid-cols-3
+    xl:grid-cols-3
+    content"
+  >
+    <div class="imgContent col-span-1">
+      <img [src]="heroComp()?.images?.md" alt="">
+    </div>
+
+    <div
+      class="
+        col-span-1
+        lg:col-span-2
+
+        grid
+        sm:grid-cols-1
+        md:grid-cols-1
+        lg:grid-cols-2
+        xl:grid-cols-2
+      "
+    >
+      <div class="custom-bullets">
+        <span>
+          <i class="fa-solid fa-circle-info"></i>
+          Información Básica
+        </span>
+
+        <ul class="custom-bullets">
+          <li>Nombre completo: {{heroComp()?.biography?.fullName}}</li>
+          <li>Primera aparición: {{heroComp()?.biography?.firstAppearance}}</li>
+          <li>Alineación: {{heroComp()?.biography?.alignment}}</li>
+          <li>Editorial: {{heroComp()?.biography?.publisher}}</li>
+        </ul>
+      </div>
+
+      <div class="custom-bullets">
+        <span>
+          <i class="fa-solid fa-plug-circle-bolt"></i>
+          Estadísticas de Poder
+        </span>
+
+        <ul class="custom-bullets">
+          <li>Combate: {{heroComp()?.powerstats?.combat}}</li>
+          <li>Inteligencia: {{heroComp()?.powerstats?.intelligence}}</li>
+          <li>Poder: {{heroComp()?.powerstats?.power}}</li>
+          <li>Velocidad: {{heroComp()?.powerstats?.speed}}</li>
+        </ul>
+      </div>
+
+      <div class="custom-bullets">
+        <span>
+          <i class="fa-solid fa-hat-cowboy"></i>
+          Detalles de Apariencia
+        </span>
+
+        <ul class="custom-bullets">
+          <li>Altura: {{heroComp()?.appearance?.height}}</li>
+          <li>Raza: {{heroComp()?.appearance?.race}}</li>
+          <li>Altura: {{heroComp()?.appearance?.height}}</li>
+          <li>Peso: {{heroComp()?.appearance?.weight}}</li>
+        </ul>
+      </div>
+
+      <div class="custom-bullets mb-10">
+        <span>
+          <i class="fa-solid fa-dna"></i>
+          Trabajo
+        </span>
+
+        <ul class="custom-bullets">
+          <li>Altura: {{heroComp()?.work?.base}}</li>
+          <li>Raza: {{heroComp()?.work?.occupation}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <app-loading /> -->

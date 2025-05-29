@@ -1,0 +1,16 @@
+<mat-card class="contentCard" appearance="outlined">
+  <mat-card-header class="mb-2">
+    <mat-card-title>{{hero.name}}</mat-card-title>
+    <mat-card-subtitle>{{(hero.biography.fullName) && hero.biography.fullName}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="hero.images.md" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>{{(hero.work.occupation.length > 1) ? hero.work.occupation : hero.work.base}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button class="primaryButton" (click)="navigateToHeroDetails(hero.id)" matButton>
+      <i class="fa-solid fa-eye"></i>
+      Ver más
+    </button>
+  </mat-card-actions>
+</mat-card>
